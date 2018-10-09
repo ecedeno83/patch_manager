@@ -129,6 +129,7 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 ### Here are a few Frequently Asked Questions
 <b>Q: Are there any differences between Windows and Linux Patching?</b>
 A: The following table describes important differences between Linux and Windows patching.
+
 | Difference | Details |
 | --- | --- |
 | Patch evaluation | For Linux patching, Systems Manager evaluates patch baseline rules and the list of approved and rejected patches on each managed instance. Systems Manager must evaluate patching on each instance because the service retrieves the list of known patches and updates from the repositories that are configured on the instance. 
