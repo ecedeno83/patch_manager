@@ -1,5 +1,4 @@
 # AWS Systems Manager Patch Manager
-Demo on how to configure systems manager patch manager for Windows and Linux hosts
 
 ### Demo Ovewrview
 EC2 Systems Manager Patch Manager helps you automatically apply OS patches within customized maintenance windows, collect software inventory, and configure Windows and Linux operating systems. These capabilities enable automated configuration and ongoing management of systems at scale and help maintain software compliance for instances running in Amazon EC2 or on-premises.
@@ -86,3 +85,16 @@ After creating the maintenance window, associate the EC2 instances that will be 
 2. On the Register targets page, for <b>Tag Filters</b>, use the <b>Patch Group</b> tag and <b>Windows Server 2016 Base</b> value created earlier for the EC2 instance.
 3. Choose Register targets.
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/targets.png  "Register Targets")
+
+### Step 7: Register a task for the Maintenance Window
+After the target is registered, register a patch task for the maintenance window.
+
+<b>To register a task</b>
+1. Choose <b>Actions</b>, <b>Register Run command task</b> for the maintenance window created earlier.
+2. In the <b>Register Task</b> page, for <b>Document</b>, select <b>AWS-RunPatchBaseline</b>
+3. For <b>Task Priority</b>, specify a priority for this task. Digit 1 is the highest priority. Tasks in a maintenance window are scheduled in priority order. Tasks that have the same priority are scheduled in parallel.
+4. For <b>Targets</b>, select the target created in the previous step.
+5. For <b>Rate Control</b>, you can specify how many instances ca be patched in parallel, either by percentage or number of targets and how many errors are allowed before the patching operation is stopped.  For this demo lets choose 100 for percentage and enter 1 for Error threshold field, which will stop the task from proceeding on other instances if 1 error is encountered.
+6. Select the <b>IAM service role</b> that allows Maintenance Windows to interact with other AWS services on your behalf.  Either use the <b>AWSServiceRoleForAmazonSSM</b> or use a custom you have created that includes the appropriate policies.
+7. For Parameters, choose Install to instruct the task to install the patch onto the instances. Or, you can choose Scan to instruct the task to perform read-only operations.
+8. Click on Register Run command task
