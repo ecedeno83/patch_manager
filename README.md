@@ -72,7 +72,7 @@ In the Systems Manager console, under <b>Actions</b>, choose <b>Maintenance Wind
 
 On the <b>Create maintenance window</b> page, fill in the name of the maintenance window and uncheck the box for allow unregistered target.
 
-Select a schedule to run the tasks. The format of the schedule can be specified in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html'>CRON expression</a> or you can use the prepared schedule builder to construct a schedule. In this example, I set up a fast feedback loop for demonstration. For <b>CRON/Rate expression</b>, enter rate(15 minutes). For <b>Duration</b>, enter 1 For <b>Stop initiating tasks</b>, enter 0 for the period before the end of the maintenance window when the system should stop scheduling new tasks to run.
+Select a schedule to run the tasks. The format of the schedule can be specified in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html'>CRON expression</a> or you can use the prepared schedule builder to construct a schedule. In this example, I set up a fast feedback loop for demonstration. For <b>CRON/Rate expression</b>, enter rate(5 minutes). For <b>Duration</b>, enter 1 For <b>Stop initiating tasks</b>, enter 0 for the period before the end of the maintenance window when the system should stop scheduling new tasks to run.
 
 After filling in the required fields, choose <b>Create maintenance window</b> and return to the maintenance window list.
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/maintwindow.png  "Maintenance Window")
@@ -104,5 +104,27 @@ After the target is registered, register a patch task for the maintenance window
 
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/iamrole.png  "IAM Role")
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/taskparams.png  "Task Parameters")
+
+### Step 8: Verify the patch compliance report
+After completing Step 7, the Patch Manager is all set.  The patches are applied to the instances during the next scheduled maintenance window (every 5 minutes for this demo).
+
+After the initial maintenance task is completed, you should see the result of the tasks in the Maintenance Window History
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport.png)
+
+<b>To see the patch compliance report</b>
+
+1. In the Systems Manager console, click on <b>Compliance</b>, under Insights section on the left-hand side.
+2. Review the Compliance resources summary for a dashboard view of patching across instances
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport2.png)
+
+You can also click on the Resource ID radio button to display Compliance rules and patch status for individual instances
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport3.png)
+
+By clicking on an individual instance ID, you can drill down to see specific patches installed. 
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport4.png)
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport5.png)
+
+
+
 
 
