@@ -124,7 +124,15 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport4.png)
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/compreport5.png)
 
+---
 
+### Here are a few Frequently Asked Questions
+<b>Q: Are there any differences between Windows and Linux Patching?</b>
+A: The following table describes important differences between Linux and Windows patching.
+Difference | Details 
+--- | --- | ---
+Patch evaluation | For Linux patching, Systems Manager evaluates patch baseline rules and the list of approved and rejected patches on each managed instance. Systems Manager must evaluate patching on each instance because the service retrieves the list of known patches and updates from the repositories that are configured on the instance. 
+Patch Manager uses a different process to evaluate which patches should be present on Windows managed instances versus Linux managed instance. For Windows patching, Systems Manager evaluates patch baseline rules and the list of approved and rejected patches directly in the service. It can do this because Windows patches are pulled from a single repository (Windows Update). 
 
-
+Not Applicable patches | Due to the large number of available packages for Linux operating systems, Systems Manager does not report details about patches in the Not Applicable state. A Not Applicable patch is, for example, a patch for Apache software when the instance does not have Apache installed. Systems Manager does report the number of Not Applicable patches in the summary, but if you call the DescribeInstancePatches API for an instance, the returned data does not include patches with a state of Not Applicable. This behavior is different from Windows. 
 
