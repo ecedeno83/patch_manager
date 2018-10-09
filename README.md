@@ -32,10 +32,18 @@ Make sure you have the following roles created before starting the walkthrough:
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/addtags.png  "Add Tags")
 
 ### Step 3: Create a custom patch baseline
-A patch baseline defines which patches should and shouldn’t be installed on your instances. Systems Manager provides a predefined default patch baseline. You can use the predefined baseline or create your own default to meet your patch compliance requirements. For more information, see Working with Patch Manager.
+A patch baseline defines which patches should and shouldn’t be installed on your instances. Systems Manager provides a predefined default patch baseline. You can use the predefined baseline or create your own default to meet your patch compliance requirements. For more information, see <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-patch-working.html'>Working with Patch Manager.</a>
 
 To create a custom baseline for Windows:
 1. In the Systems Manager console, under Actions, choose Patch Manager, then click on Create Patch Baseline button in the upper right.
 
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/patchbaseline.png  "Custom Patch Baseline")
+
+2. In the Create Patch Baseline page, enter values for the patch filters as follows: 
+* For Product, enter WindowsServer2016.
+* For Classification, enter SecurityUpdates.
+* For Severity, enter both Critical and Important.
+* For Auto Approval Delay, enter 3 days.
+3. Choose Create Patch Baseline.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/editbaseline.png  "Edit Baseline")
 
