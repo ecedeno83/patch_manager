@@ -62,7 +62,7 @@ Choose your Patch sources based on the OS and Product selected in prior steps.  
 Click on the radio button for the Custom Patch Baseline created in the prior step, then click on Actions menu and select “Modify patch groups”.
 
 On the Modify patch groups page add the previously defined tag <b>Windows Server 2016 Base</b>, then click close.
-![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/modifypatchgroups.png  "MJodify Patch Group")
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/modifypatchgroups.png  "Modify Patch Group")
 
 ### Step 5: Create a Maintenance Window
 The Maintenance Windows feature defines schedules when you are performing potentially disruptive actions, for example Operation System patching, updating drivers, or installing software. Inside the maintenance window, you register targets, which are EC2 instances to be patched, and register a patching tasks to be run.
@@ -76,3 +76,13 @@ On the <b>Create maintenance window</b> page, fill in the name of the maintenanc
 Select a schedule to run the tasks. The format of the schedule can be specified in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html'>CRON expression</a> or you can use the prepared schedule builder to construct a schedule. In this example, I set up a fast feedback loop for demonstration. For <b>CRON/Rate expression</b>, enter rate(15 minutes). For <b>Duration</b>, enter 1 For <b>Stop initiating tasks</b>, enter 0 for the period before the end of the maintenance window when the system should stop scheduling new tasks to run.
 
 After filling in the required fields, choose <b>Create maintenance window</b> and return to the maintenance window list.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/maintwindow.png  "Maintenance Window")
+
+### Step 6: Register targets for Maintenance Window
+After creating the maintenance window, associate the EC2 instances that will be affected inside the schedule.
+
+<b>To register a target for the maintenance window</b>
+1. Choose <b>Actions</b>, <b>Register targets</b> for the maintenance window created in the previous step.
+2. On the Register targets page, for <b>Tag Filters</b>, use the <b>Patch Group</b> tag and <b>Windows Server 2016 Base</b> value created earlier for the EC2 instance.
+3. Choose Register targets.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/targets.png  "Register Targets")
