@@ -34,7 +34,7 @@ Make sure you have the following roles created before starting the walkthrough:
 ### Step 3: Create a custom patch baseline
 A patch baseline defines which patches should and shouldn’t be installed on your instances. Systems Manager provides a predefined default patch baseline. You can use the predefined baseline or create your own default to meet your patch compliance requirements. For more information, see <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-patch-working.html'>Working with Patch Manager.</a>
 
-To create a custom baseline for Windows:
+#### To create a custom baseline for Windows:
 1. In the Systems Manager console, under Actions, choose Patch Manager, then click on Create Patch Baseline button in the upper right.
 
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/patchbaseline.png  "Custom Patch Baseline")
@@ -50,4 +50,16 @@ To create a custom baseline for Windows:
 #### To create a custom baseline for Linux:
 
 1. Select your Operating System and Product from the drop down menus, along with Approval Rules just as you did for the Windows patch baseline.
-![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/lx_patchbaseline.png  "Edit Baseline")
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/lx_patchbaseline.png  "Patch Baseline")
+
+2. Add comma separated list of approved or rejected patches, to ensure path manager either only installs patches certified by your organization, or explicitly blocks patches that you do not want installed.  For this demo we will leave these values blank.
+
+Choose your Patch sources based on the OS and Product selected in prior steps.  Then click on Create patch baseline.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/patchsources.png  "Patch Source")
+
+### Step 4: Set the patch group for custom patch baseline
+<b>To modify the patch groups for this custom baseline policy</b>
+Click on the radio button for the Custom Patch Baseline created in the prior step, then click on Actions menu and select “Modify patch groups”.
+
+On the Modify patch groups page add the previously defined tag Windows Server 2016 Base, then click close.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/modifypatchgroups.png  "MJodify Patch Group")
