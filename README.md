@@ -47,3 +47,7 @@ To create a custom baseline for Windows:
 3. Choose Create Patch Baseline.
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/editbaseline.png  "Edit Baseline")
 
+#### To create a custom baseline for Linux:
+
+1. Select your Operating System and Product from the drop down menus, along with Approval Rules just as you did for the Windows patch baseline.
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/lx_patchbaseline.png  "Edit Baseline")
