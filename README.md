@@ -126,7 +126,9 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 
 ---
 
-### Here are a few Frequently Asked Questions
+### Common Questions for this Demo
+#### <a href='https://aws.amazon.com/systems-manager/faq/#Patch_Manager'>Click here for the official AWS Patch Manager FAQ's</a>
+
 <b>Q: Are there any differences between Windows and Linux Patching?</b><br>
 A: The following table describes important differences between Linux and Windows patching.
 
