@@ -20,3 +20,4 @@ Make sure you have the following roles created before starting the walkthrough:
 * Create an IAM role for Maintenance Windows
 * For Maintenance Windows to send commands to EC2 instances, you must configure an IAM role. Follow the steps in Configuring Access to Maintenance Windows.
 
+### Step 1: Launch Windows Instance
