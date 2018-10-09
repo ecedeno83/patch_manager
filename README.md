@@ -61,5 +61,5 @@ Choose your Patch sources based on the OS and Product selected in prior steps.  
 <b>To modify the patch groups for this custom baseline policy</b>
 Click on the radio button for the Custom Patch Baseline created in the prior step, then click on Actions menu and select “Modify patch groups”.
 
-On the Modify patch groups page add the previously defined tag Windows Server 2016 Base, then click close.
+On the Modify patch groups page add the previously defined tag <b>Windows Server 2016 Base</b>, then click close.
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/modifypatchgroups.png  "MJodify Patch Group")
