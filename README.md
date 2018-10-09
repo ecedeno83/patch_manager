@@ -28,5 +28,14 @@ Make sure you have the following roles created before starting the walkthrough:
 * First, create a tag called Patch Group (required) and a value, such as Windows Server 2016 Base. A patch group is an optional means of organizing instances for patching. It defines which patch baseline should be used. If this tag is not defined, and you don’t specify your own default patch baseline, an AWS predefined patch baseline is used instead. For more information, see Working with Patch Manager.
 
 * Next, create a tag called Name, which is used later as a filter in the maintenance window configuration. Enter a value such as Patch Manager Demo.
+
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/addtags.png  "Add Tags")
+
+### Step 3: Create a custom patch baseline
+A patch baseline defines which patches should and shouldn’t be installed on your instances. Systems Manager provides a predefined default patch baseline. You can use the predefined baseline or create your own default to meet your patch compliance requirements. For more information, see Working with Patch Manager.
+
+To create a custom baseline for Windows:
+1. In the Systems Manager console, under Actions, choose Patch Manager, then click on Create Patch Baseline button in the upper right.
+
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/patchbaseline.png  "Custom Patch Baseline")
 
