@@ -63,3 +63,16 @@ Click on the radio button for the Custom Patch Baseline created in the prior ste
 
 On the Modify patch groups page add the previously defined tag <b>Windows Server 2016 Base</b>, then click close.
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/modifypatchgroups.png  "MJodify Patch Group")
+
+### Step 5: Create a Maintenance Window
+The Maintenance Windows feature defines schedules when you are performing potentially disruptive actions, for example Operation System patching, updating drivers, or installing software. Inside the maintenance window, you register targets, which are EC2 instances to be patched, and register a patching tasks to be run.
+
+To create a maintenance window
+
+In the Systems Manager console, under <b>Actions</b>, choose <b>Maintenance Windows</b>, then click <b>Create maintenance window.</b>
+
+On the <b>Create maintenance window</b> page, fill in the name of the maintenance window and uncheck the box for allow unregistered target.
+
+Select a schedule to run the tasks. The format of the schedule can be specified in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html'>CRON expression</a> or you can use the prepared schedule builder to construct a schedule. In this example, I set up a fast feedback loop for demonstration. For <b>CRON/Rate expression</b>, enter rate(15 minutes). For <b>Duration</b>, enter 1 For <b>Stop initiating tasks</b>, enter 0 for the period before the end of the maintenance window when the system should stop scheduling new tasks to run.
+
+After filling in the required fields, choose <b>Create maintenance window</b> and return to the maintenance window list.
