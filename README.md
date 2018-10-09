@@ -25,7 +25,7 @@ Make sure you have the following roles created before starting the walkthrough:
 
 ### Step 2: Add Tags to EC2 instance
 <b>Add Tags</b> - define EC2 tags as follows: 
-* First, create a tag called Patch Group (required) and a value, such as Windows Server 2016 Base. A patch group is an optional means of organizing instances for patching. It defines which patch baseline should be used. If this tag is not defined, and you don’t specify your own default patch baseline, an AWS predefined patch baseline is used instead. For more information, see Working with Patch Manager.
+* First, create a tag called Patch Group (required) and a value, such as Windows Server 2016 Base. A patch group is an optional means of organizing instances for patching. It defines which patch baseline should be used. If this tag is not defined, and you don’t specify your own default patch baseline, an AWS predefined patch baseline is used instead. For more information, see <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-patch-working.html'>Working with Patch Manager.</a>
 
 * Next, create a tag called Name, which is used later as a filter in the maintenance window configuration. Enter a value such as Patch Manager Demo.
 
