@@ -96,5 +96,13 @@ After the target is registered, register a patch task for the maintenance window
 4. For <b>Targets</b>, select the target created in the previous step.
 5. For <b>Rate Control</b>, you can specify how many instances ca be patched in parallel, either by percentage or number of targets and how many errors are allowed before the patching operation is stopped.  For this demo lets choose 100 for percentage and enter 1 for Error threshold field, which will stop the task from proceeding on other instances if 1 error is encountered.
 6. Select the <b>IAM service role</b> that allows Maintenance Windows to interact with other AWS services on your behalf.  Either use the <b>AWSServiceRoleForAmazonSSM</b> or use a custom you have created that includes the appropriate policies.
-7. For Parameters, choose Install to instruct the task to install the patch onto the instances. Or, you can choose Scan to instruct the task to perform read-only operations.
-8. Click on Register Run command task
+7. For <b>Parameters</b>, choose <b>Install</b> to instruct the task to install the patch onto the instances. Or, you can choose Scan to instruct the task to perform read-only operations.
+8. Click on <b?Register Run command task</b>
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/mainttask.png  "Maintenance Tasks")
+
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/taskdocument.png  "Task Document")
+
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/iamrole.png  "IAM Role")
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/taskparams.png  "Task Parameters")
+
+
