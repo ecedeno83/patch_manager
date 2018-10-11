@@ -13,7 +13,6 @@ EC2 Systems Manager Patch Manager helps you automatically apply OS patches withi
 7. Verify the patch compliance report.
 
 #### Prerequisites
-Make sure you have the following roles created before starting the walkthrough:
 * Create an IAM role for EC2 instances
 * Systems Manager requires an IAM role for EC2 instances that will process commands. Follow Task 2 in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-policies.html#sysman-configuring-access-role'>Configuring Access Using Systems Manager Managed Policies.</a>
 * Create an IAM role for Maintenance Windows
