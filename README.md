@@ -135,10 +135,10 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 
 <b>Q: Do EC2 instances need public internet access to communicate with Systems Manager service?</b><br>
 A: No. VPC interface endpoints can be created to keep communication private within your VPC between EC2 instances and Systems Manager service. Communication between EC2 instances and Systems Manager does not need to traverse the public internet.
-VPC endpoints need to be created for the following services:
-<b>com.amazonaws.region.ssm</b> - The endpoint for the Systems Manager service. 
-<b>com.amazonaws.region.ec2messages</b> -  Systems Manager uses this endpoint to make calls from SSM Agent to SSM service.
-<b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.
+VPC endpoints need to be created for the following services:<br>
+<b>com.amazonaws.region.ssm</b> - The endpoint for the Systems Manager service.<br>
+<b>com.amazonaws.region.ec2messages</b> -  Systems Manager uses this endpoint to make calls from SSM Agent to SSM service.<br>
+<b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.<br>
 You will also need to create a gateway endpoint for Amazon S3. Systems Manager uses this endpoint to upload Amazon S3 output logs, and to update SSM Agent.
 
 <b>Q: Can I configure and use my own private patch repository for patch manager?</b><br>
