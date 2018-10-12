@@ -12,7 +12,7 @@ EC2 Systems Manager Patch Manager helps you automatically apply OS patches withi
 6. Register a task for the maintenance window.
 7. Verify the patch compliance report.
 
-![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/diagram1.png  "Patch Manager Architecture")
+![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/diagram1.PNG  "Patch Manager Architecture")
 
 #### Prerequisites
 * Create an IAM role for EC2 instances
