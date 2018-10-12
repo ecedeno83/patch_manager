@@ -139,7 +139,7 @@ VPC endpoints need to be created for the following services:
 <b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.
 You will also need to create a gateway endpoint for Amazon S3. Systems Manager uses this endpoint to upload Amazon S3 output logs, and to update SSM Agent.
 
-<b>Q:Can I configure and use my own private patch repository for patch manager?</b><br>
+<b>Q: Can I configure and use my own private patch repository for patch manager?</b><br>
 A: Yes. You can modify the EC2 instance repo configuration files to point to your own private repo URL's. For example,  on a RHEL instance you can modify the /etc/yum.repos.d/repository.repo file and change the baseurl to your private repo endpoint.  Many customers use WSUS (Windows) and Red Hat Satellite (Linux) to manage their private repositories.
 
 <b>Q: Are there any differences between Windows and Linux Patching?</b><br>
