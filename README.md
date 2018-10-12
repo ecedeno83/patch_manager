@@ -128,7 +128,7 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 
 ---
 
-### Common Questions for this Demo
+# Common Questions for this Demo
 #### <a href='https://aws.amazon.com/systems-manager/faq/#Patch_Manager'>Click here to see the full AWS Patch Manager FAQ's</a>
 
 <b>Q: Do EC2 instances need public internet access to communicate with Systems Manager service?</b><br>
