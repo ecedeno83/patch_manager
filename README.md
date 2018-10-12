@@ -17,7 +17,9 @@ EC2 Systems Manager Patch Manager helps you automatically apply OS patches withi
 * Systems Manager requires an IAM role for EC2 instances that will process commands. Follow Task 2 in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-policies.html#sysman-configuring-access-role'>Configuring Access Using Systems Manager Managed Policies.</a>
 * Create an IAM role for Maintenance Windows
 * For Maintenance Windows to send commands to EC2 instances, you must configure an IAM role. Follow the steps in <a href='http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html'>Configuring Access to Maintenance Windows.</a>
-* SSM agent is installed on the EC2 instance(s). See the <a href='https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html'> how to install and configure SSM agent</a> guide for additional information.
+* Install SSM Agent on the EC2 instance(s) to be patched. See the <a href='https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html'> how to install and configure SSM agent</a> guide for additional information.
+  - SSM Agent is installed, by default, on Windows Server 2016 instances and instances created from Windows Server 2003-2012 R2 AMIs published in November 2016 or later. <a href='https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-win.html'>View Details here.</a>
+  - SSM Agent is installed, by default, on Amazon Linux base AMIs dated 2017.09 and later. SSM Agent is also installed, by default, on Amazon Linux 2, Ubuntu Server 16.04, and Ubuntu Server 18.04 LTS AMIs. <a href='https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html'>View details here</a>
 
 ### Step 1: Launch Windows Instance
 ![alt text](https://github.com/ecedeno83/patch_manager/blob/master/images/image.png  "Launch Instance")
