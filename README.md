@@ -142,3 +142,9 @@ A: The following table describes important differences between Linux and Windows
 <b>Q: What happens if a patch fails?</b><br>
 A: When registering a task for the patch manager maintenance window, you specify the number of errors allowed before stopping the task. If you specify 1, the task will stop after encountering an error.
 
+<b>Q: Does patch manager need public internet access to communicate with ?</b><br>
+A: No, VPC interface endpoints can be created to keep communication private within your VPC between EC2 instances and Systems Manager.  VPC endpoints need to be created for the following services:
+<b>com.amazonaws.region.ssm</b> - The endpoint for the Systems Manager service. 
+<b>com.amazonaws.region.ec2messages</b> -  Systems Manager uses this endpoint to make calls from SSM Agent to SSM service.
+<b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.
+You will also need to create a gateway endpoint for Amazon S3. Systems Manager uses this endpoint to upload Amazon S3 output logs, and to update SSM Agent.
