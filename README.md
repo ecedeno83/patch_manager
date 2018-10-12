@@ -1,7 +1,7 @@
 # AWS Systems Manager Patch Manager
 
 ### Demo Ovewrview
-EC2 Systems Manager Patch Manager helps you automatically apply OS patches within customized maintenance windows, collect software inventory, and configure Windows and Linux operating systems. These capabilities enable automated configuration and ongoing management of systems at scale and help maintain software compliance for instances running in Amazon EC2 or on-premises.
+EC2 <a href='https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html'>Systems Manager</a> Patch Manager helps you automatically apply OS patches within customized maintenance windows, collect software inventory, and configure Windows and Linux operating systems. These capabilities enable automated configuration and ongoing management of systems at scale and help maintain software compliance for instances running in Amazon EC2 or on-premises.
 
 #### In this Demo you will:
 1. Launch new Windows instance.
