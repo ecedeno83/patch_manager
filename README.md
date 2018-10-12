@@ -131,6 +131,17 @@ By clicking on an individual instance ID, you can drill down to see specific pat
 ### Common Questions for this Demo
 #### <a href='https://aws.amazon.com/systems-manager/faq/#Patch_Manager'>Click here to see the full AWS Patch Manager FAQ's</a>
 
+<b>Q: Do EC2 instances need public internet access to communicate with Systems Manager service?</b><br>
+A: No. VPC interface endpoints can be created to keep communication private within your VPC between EC2 instances and Systems Manager service. Communication between EC2 instances and Systems Manager does not need to traverse the public internet.
+VPC endpoints need to be created for the following services:
+<b>com.amazonaws.region.ssm</b> - The endpoint for the Systems Manager service. 
+<b>com.amazonaws.region.ec2messages</b> -  Systems Manager uses this endpoint to make calls from SSM Agent to SSM service.
+<b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.
+You will also need to create a gateway endpoint for Amazon S3. Systems Manager uses this endpoint to upload Amazon S3 output logs, and to update SSM Agent.
+
+<b>Q:Can I configure and use my own private patch repository for patch manager?</b><br>
+A: Yes. You can modify the EC2 instance repo configuration files to point to your own private repo URL's. For example,  on a RHEL instance you can modify the /etc/yum.repos.d/repository.repo file and change the baseurl to your private repo endpoint.  Many customers use WSUS (Windows) and Red Hat Satellite (Linux) to manage their private repositories.
+
 <b>Q: Are there any differences between Windows and Linux Patching?</b><br>
 A: The following table describes important differences between Linux and Windows patching.
 
@@ -139,12 +150,5 @@ A: The following table describes important differences between Linux and Windows
 | Patch evaluation | For Linux patching, Systems Manager evaluates patch baseline rules and the list of approved and rejected patches on each managed instance. Systems Manager must evaluate patching on each instance because the service retrieves the list of known patches and updates from the repositories that are configured on the instance.  Patch Manager uses a different process to evaluate which patches should be present on Windows managed instances versus Linux managed instance. For Windows patching, Systems Manager evaluates patch baseline rules and the list of approved and rejected patches directly in the service. It can do this because Windows patches are pulled from a single repository (Windows Update).
 | Not Applicable patches | Due to the large number of available packages for Linux operating systems, Systems Manager does not report details about patches in the Not Applicable state. A Not Applicable patch is, for example, a patch for Apache software when the instance does not have Apache installed. Systems Manager does report the number of Not Applicable patches in the summary, but if you call the DescribeInstancePatches API for an instance, the returned data does not include patches with a state of Not Applicable. This behavior is different from Windows. |
 
-<b>Q: What happens if a patch fails?</b><br>
-A: When registering a task for the patch manager maintenance window, you specify the number of errors allowed before stopping the task. If you specify 1, the task will stop after encountering an error.
-
-<b>Q: Does patch manager need public internet access to communicate with ?</b><br>
-A: No, VPC interface endpoints can be created to keep communication private within your VPC between EC2 instances and Systems Manager.  VPC endpoints need to be created for the following services:
-<b>com.amazonaws.region.ssm</b> - The endpoint for the Systems Manager service. 
-<b>com.amazonaws.region.ec2messages</b> -  Systems Manager uses this endpoint to make calls from SSM Agent to SSM service.
-<b>com.amazonaws.region.ec2</b> – Use this endpoint if you are using Systems Manager to create VSS-enabled snapshots.
-You will also need to create a gateway endpoint for Amazon S3. Systems Manager uses this endpoint to upload Amazon S3 output logs, and to update SSM Agent.
+<b>Q: What happens if a patch installation fails?</b><br>
+A: When registering a task for the patch manager maintenance window, you specify the number of errors allowed before stopping the task. If you specify 1, the task will stop after encountering the first error, allowing you to troubleshoot and remediate any issues prior to continuing with upgrades on your fleet of instances.
