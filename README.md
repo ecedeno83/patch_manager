@@ -154,3 +154,6 @@ A: The following table describes important differences between Linux and Windows
 
 <b>Q: What happens if a patch installation fails?</b><br>
 A: When registering a task for the patch manager maintenance window, you specify the number of errors allowed before stopping the task. If you specify 1, the task will stop after encountering the first error, allowing you to troubleshoot and remediate any issues prior to continuing with upgrades on your fleet of instances.
+
+<b>Q: How much does Systems Manager cost?</b><br>
+A: Systems Manager features and shared components are offered at <b>no additional cost</b>. You pay only for the AWS resources that you use.
